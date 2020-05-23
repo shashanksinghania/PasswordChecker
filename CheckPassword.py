@@ -34,4 +34,4 @@ def main(passwords):
             print(f'{password} was NOT found... WAY TO GO!')
 
 if __name__ == '__main__':
-    main(sys.argv[1:])
+    sys.exit(main(sys.argv[1:]))
