@@ -27,7 +27,8 @@ def check_pwned_api(password):
     return password_counts(response, remaining)
 
 #outputs the counts of passwords and suggests whether to change it or not
-def main(passwords):
+def main():
+    passwords = (input('Enter all the passwords you want to check (separated with spaces): ')).split()
     for password in passwords:
         count = check_pwned_api(password)
         if (count > 0):
@@ -36,4 +37,4 @@ def main(passwords):
             print(f'{password} was NOT found... WAY TO GO!')
 
 if __name__ == '__main__':
-    sys.exit(main(sys.argv[1:]))
+    sys.exit(main())
